@@ -4,7 +4,24 @@ const { OAuth2Client } = require('google-auth-library');
 
 const CLIENT_ID = '908020662248-4avibqhg0tk2eledufh7jokj8thhtjgn.apps.googleusercontent.com'; // Replace with your Google OAuth2 client ID
 
+const db = require('./models/');
+const User = db.users;
+
 app.use(express.json());
+
+app.post('/api/addUser', async (req, res) => {
+  let info = {
+    email: req.body.email,
+    password: req.body.password
+  }
+  try {
+      const user = await User.create(info);
+      res.status(201).json(user);
+  } catch (error) {
+      res.status(400).json(error);
+      console.log(error); 
+  }
+});
 
 app.post('/api/google-auth', (req, res) => {
   const { token } = req.body;

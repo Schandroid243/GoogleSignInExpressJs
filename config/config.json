@@ -1,0 +1,23 @@
+{
+    "development": {
+      "username": "root",
+      "password": "abc@12345",
+      "database": "test_auth",
+      "host": "localhost",
+      "dialect": "mysql"
+    },
+    "test": {
+        "username": "root",
+        "password": "snn1love",
+        "database": "daurecard_db", 
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "freedb_freedb-root-user",
+        "password": "qagy$4S5J&FN5vz",
+        "database": "freedb_daurecard_db",
+        "host": "sql.freedb.tech",
+        "dialect": "mysql"
+    }
+  }
